@@ -98,7 +98,7 @@ class ASCOMCamera(CameraBase):
         self._readoutModes = {self._MY_CCD: {}}
         i_mode_tot = 0
         for i_mode in range(len(self._ascom_readout_modes)):
-            for binning, i_mode in self._binnings.iteritems():
+            for binning, i_mode in self._binnings.items():
                 readoutMode = ReadoutMode()
                 vbin, hbin = [int(v) for v in binning.split('x')]
                 readoutMode.mode = i_mode

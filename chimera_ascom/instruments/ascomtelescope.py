@@ -52,7 +52,7 @@ def com(func):
 
         try:
             return func(*args, **kwargs)
-        except com_error, e:
+        except com_error as e:
             raise ChimeraException(str(e))
 
     return com_wrapper
@@ -178,7 +178,7 @@ class ASCOMTelescope(TelescopeBase, TelescopeCover, TelescopePier):
                 time.sleep(self._idle_time)
 
             self.slewComplete(self.getPositionRaDec(), status)
-            print 'Slew Complete'
+            print('Slew Complete')
             self.log.info("Slew Complete.")
 
         else:
@@ -227,7 +227,7 @@ class ASCOMTelescope(TelescopeBase, TelescopeCover, TelescopePier):
             time.sleep(self._idle_time)
 
         self.slewComplete(self.getPositionRaDec(), status)
-        print 'Slew Complete'
+        print('Slew Complete')
         self.log.info("Slew Complete.")
 
         #
